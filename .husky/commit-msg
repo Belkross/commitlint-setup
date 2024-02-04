@@ -1,0 +1,2 @@
+echo "Launching commitlint"
+npx --no -- commitlint --edit $1
