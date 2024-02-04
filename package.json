@@ -1,18 +1,26 @@
 {
-  "name": "commitlint-setup",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@belkross/commitlint-config": "^1.0.1",
-    "commitlint": "^18.6.0",
-    "husky": "^9.0.10"
-  }
+	"name": "commitlint-setup",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepare": "husky",
+		"commit": "npx cz"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@belkross/commitlint-config": "^1.0.2",
+		"@commitlint/cz-commitlint": "^18.6.0",
+		"commitizen": "^4.3.0",
+		"commitlint": "^18.6.0",
+		"husky": "^9.0.10"
+	},
+	"config": {
+		"commitizen": {
+			"path": "@commitlint/cz-commitlint"
+		}
+	}
 }
