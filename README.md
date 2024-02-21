@@ -3,21 +3,32 @@
 This repository intends to show how to setup a commit message linter that will be triggered everytime someone do a
 commit. This example runs with my personnal commitlint config (@belkross/commitlint-config).
 
-# Commit linter
+# Commit linter (local)
 
-1. install dependencies: `npm install --save-dev commitlint @belkross/commitlint-config husky`
-2. link commitlint with the config:
-   1. create a **_commitlint.config.ts_** file
-   2. add `module.exports = { extends: ["@belkross/commitlint-config"] }` in it
-3. create a commit-msg hook
-   1. init husky `npx husky init`
-   2. delete the **_pre-commit_** file in the folder **_.husky_**
-   3. create a file called **_commit-msg_** in the **_.husky_** folder
-   4. add this script `npx --no -- commitlint --edit $1` in it
+1. Install dependencies: `npm install --save-dev commitlint @belkross/commitlint-config husky`
+
+2. Link commitlint with the config:
+
+   1. Create a **_commitlint.config.ts_** file
+
+   2. Add this line in it: `module.exports = { extends: ["@belkross/commitlint-config"] }`
+
+3. Create a commit-msg hook
+
+   1. Initialize husky `npx husky init`
+
+   2. Delete the **_pre-commit_** file in the folder **_.husky_** (if you don’t need it)
+
+   3. Create a file called **_commit-msg_** in the folder **_.husky_**
+
+   4. Add this script in it: `npx --no -- commitlint --edit $1`
 
 # Commit terminal helper
 
-1. install dependencies: `npm install --save-dev commitizen @commitlint/cz-commitlint`
-2. link the commitlint config with commitizen
-   1. add `"config": { "commitizen": { "path": "@commitlint/cz-commitlint" } }` to the **_package.json_**
-3. add a commit script `"commit": "npx cz"`
+1. Install dependencies: `npm install --save-dev commitizen @commitlint/cz-commitlint`
+
+2. Link the commitlint config with commitizen
+
+   1. Add this code to the **_package.json_**: `"config": { "commitizen": { "path": "@commitlint/cz-commitlint" } }`
+
+3. Add a commit script to **_package.json_**: `"commit": "npx cz"`
