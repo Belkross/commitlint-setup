@@ -11,7 +11,7 @@ commit. This example runs with my personnal commitlint config (@belkross/commitl
 
    1. Create a **_commitlint.config.ts_** file
 
-   2. Add this line in it: `module.exports = { extends: ["@belkross/commitlint-config"] }`
+   2. Add this line in it: `export default { extends: ["@belkross/commitlint-config"] }`
 
 3. Create a commit-msg hook
 
