@@ -22,6 +22,19 @@ commit. This example runs with my personnal commitlint config (@belkross/commitl
    3. Create a file called **_commit-msg_** in the folder **_.husky_**
 
    4. Add this script in it: `npx --no -- commitlint --edit $1`
+   
+## MacOS oneline command
+
+Copy and paste the following command in your terminal
+
+```
+pnpm install --save-dev commitlint @belkross/commitlint-config husky &&
+touch commitlint.config.ts &&
+echo "export default { extends: [\"@belkross/commitlint-config\"] }" >> commitlint.config.ts && 
+npx husky init && 
+touch ./.husky/commit-msg && 
+echo -e "echo \"\\\n *** checking commit message with commitlint\\\n\"\nnpx --no -- commitlint --edit $1" >> ./.husky/commit-msg
+```
 
 # Commit terminal helper
 
